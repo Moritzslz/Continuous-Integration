@@ -4,7 +4,6 @@ plugins {
 }
 mainClassName = 'de.tum.in.ase.eist.App'
 jar.enabled = false
-build.dependsOn(shadowJar)
 
 sourceCompatibility = 17
 version = '1.0.0'
