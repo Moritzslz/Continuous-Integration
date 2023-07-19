@@ -9,6 +9,8 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import org.apache.logging.log4j.*;
+import org.apache.logging.log4j.core.LoggerContext;
+import org.apache.logging.log4j.core.config.Configurator;
 import org.apache.logging.log4j.core.config.LoggerConfig;
 
 public class UniversityApp extends Application {
@@ -18,6 +20,7 @@ public class UniversityApp extends Application {
 	private static final int SCENE_HEIGHT = 250;
   	// TODO 4.1: Initialize the Logger
 	private static final Logger logger = LogManager.getLogger(UniversityApp.class);
+
 
 
 	@Override
@@ -50,7 +53,8 @@ public class UniversityApp extends Application {
 
 	public static void startApp(String[] args) {
 		// TODO 4.2: Log the start of the app at the info level
-		logger.info("Start");
+		Configurator.setRootLevel(Level.INFO);
+		logger.log(Level.INFO, "Starting App");
 		launch(args);
 	}
 }
